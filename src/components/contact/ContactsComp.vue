@@ -3,7 +3,7 @@
         <div class="contact-wrapper">
             <h4 class="contact_title title">Contacts</h4>
             
-            <div class="contact-social">icons here</div>
+            <div class="contact-social">icons be here</div>
 
             <div class="contact-form">
                 <form-contact></form-contact>
