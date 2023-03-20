@@ -3,7 +3,9 @@
         <div class="contact-wrapper">
             <h4 class="contact_title title">Contacts</h4>
             
-            <div class="contact-social">icons be here</div>
+            <div class="contact-social">
+                <contact-icons></contact-icons>
+            </div>
 
             <div class="contact-form">
                 <form-contact></form-contact>
@@ -15,12 +17,15 @@
 
 <script>
 import FormContact from '@/components/contact/FormContact.vue'
+import ContactIcons from '@/components/contact/ContactIcons.vue'
+
 
 
 export default {
     name:'contacts-comp',
     components:{
-        FormContact
+        FormContact,
+        ContactIcons
     },
     data() {
         return{
@@ -47,6 +52,7 @@ export default {
     }
     &-social{
         background-color: #5CCDC9;
+        height: 90px;
     }
 }
 

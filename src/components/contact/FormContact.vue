@@ -4,7 +4,7 @@
                 <!-- input name for templates letters -->
                 <div class="form-item" id="name-input">
                     <label for="user_name">Your Name</label>
-                    <input type="text" id="user_name" name="user_name" v-model="userName">
+                    <input type="text" id="user_name" name="user_name" v-model="userName" required>
                 </div>
                     
                 <div class="form-item" id="mail-input">
@@ -16,8 +16,14 @@
                     <label for="message">Message</label>
                     <textarea name="message"  v-model="userMessage"></textarea>     
                 </div>             
-                <button class="btn" id="button-submit"> submit </button>
+                <div class="submit-wrapper">
+                    <button class="btn" id="button-submit"> submit </button> 
+                    <loader-comp v-if="loaderShow"></loader-comp>
+                </div>
         </form>
+
+        
+
         <div v-if="showMessage" class="message">
             Send!
         </div>
@@ -31,9 +37,15 @@
 <script>
 import emailjs from '@emailjs/browser';
 
+import LoaderComp from '@/components/UI/LoaderComp.vue'
+
 console.log(emailjs)
 
 export default {
+    name:"form-contact",
+    components:{
+        LoaderComp,
+    },
     data() {
         return{
             userName: '',
@@ -45,7 +57,9 @@ export default {
 
             serv: 'service_654gau7',
             templ: 'template_2uuliqb',
-            key: 'QccUYVTCDVBSE0JEN'
+            key: 'QccUYVTCDVBSE0JEN',
+
+            loaderShow: false
         }
     },
     methods:{
@@ -69,19 +83,22 @@ export default {
                 name: this.userName,
                 mail: this.userMail,
                 message: this.userMessage,
-                true: true
+                // true: true
             };
             console.log(template)
 
             // отправка на сервер
+            this.loaderShow = true
             await  emailjs.send(this.serv, this.templ, template, this.key)
             .then((result) => {
                     console.log('Mail Send!', result.text);
                     this.showMessage = true
+                    this.loaderShow = false
                     setTimeout(() => this.showMessage = false, 3000)
                 }, (error) => {
                     console.log('Sending error...try later', error.text);                    
                     this.showMessageFalse = true
+                    this.loaderShow = false
                     setTimeout(() => this.showMessage = false, 
                     3000)
                 })                
@@ -94,7 +111,7 @@ export default {
 form{
     background-color: #5CCDC9;
     row-gap: 30px;
-    margin-top: 30px;
+    margin-top: 25px;
     min-height: 300px;
     display: flex;
     flex-direction: column;
@@ -150,6 +167,11 @@ form{
         color: #fbfbfb;
         font-weight: 500;
     }
+}
+
+.submit-wrapper{
+    position: relative;
+    border-radius: 5px;
 }
 
 
