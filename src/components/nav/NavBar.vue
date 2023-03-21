@@ -3,10 +3,10 @@
     <div :class="{visibleMenu: menu}" class="menu">
         <nav :class="{navActive: menu}">
             <ul>
-                <li class="nav_item">Home</li> <hr>
-                <li class="nav_item">About</li> <hr>
-                <li class="nav_item">Skills</li> <hr>
-                <li class="nav_item">Contacts</li> <hr>
+                <li @click="menu = false" class="nav_item"><a href="#home">Home</a></li> <hr>
+                <li @click="menu = false" class="nav_item"><a href="#about">About</a></li> <hr>
+                <li @click="menu = false" class="nav_item"><a href="#skills">Skills</a></li> <hr>
+                <li @click="menu = false" class="nav_item"><a href="#contact">Contact</a></li> <hr>
             </ul>
             <hr class="divider">
         </nav>
@@ -151,6 +151,10 @@ nav{
 
 .nav{
     &_item{
+        a{
+            text-decoration: none;
+            // font-family: 'Adamcg Pro', sans-serif;
+        }
         position: relative;
         list-style-type: none;
         font-weight: 500;

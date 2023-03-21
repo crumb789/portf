@@ -65,7 +65,36 @@ export default {
     methods:{
         submitBtn(){
             this.sendEmail()
+        },
+
+        async sendEmail() {
+            // формируем данные для письма, в шаблоне отображение по имени ключа
+            var template = {
+                name: this.userName,
+                mail: this.userMail,
+                message: this.userMessage,
+            };
             
+
+            // отправка на сервер
+            this.loaderShow = true
+            await  emailjs.send(this.serv, this.templ, template, this.key)
+            .then((result) => {
+                    console.log('Mail Send!', result.text);
+                    this.showMessage = true
+                    this.deleteString()
+                    this.loaderShow = false
+                    setTimeout(() => this.showMessage = false, 3000)
+                }, (error) => {
+                    console.log('Sending error...try later', error.text);                    
+                    this.showMessageFalse = true
+                    this.loaderShow = false
+                    setTimeout(() => this.showMessage = false, 
+                    3000)
+                }) 
+
+        },
+        deleteString(){
             let deletString = () =>{
                 this.userMessage = this.userMessage.substring(0, this.userMessage.length - 1);
 
@@ -77,32 +106,6 @@ export default {
             let deletStringInterval = setInterval( deletString , 10)
 
         },
-        async sendEmail() {
-            // формируем данные для письма, в шаблоне отображение по имени ключа
-            var template = {
-                name: this.userName,
-                mail: this.userMail,
-                message: this.userMessage,
-                // true: true
-            };
-            console.log(template)
-
-            // отправка на сервер
-            this.loaderShow = true
-            await  emailjs.send(this.serv, this.templ, template, this.key)
-            .then((result) => {
-                    console.log('Mail Send!', result.text);
-                    this.showMessage = true
-                    this.loaderShow = false
-                    setTimeout(() => this.showMessage = false, 3000)
-                }, (error) => {
-                    console.log('Sending error...try later', error.text);                    
-                    this.showMessageFalse = true
-                    this.loaderShow = false
-                    setTimeout(() => this.showMessage = false, 
-                    3000)
-                })                
-            }
     }
 }
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <section class="contacts">
+  <section class="contacts" id="contact">
     <div class="container">
       <contacts-comp>
 

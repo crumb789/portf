@@ -5,14 +5,14 @@
   </nav>
   <router-view/> -->
 
-  <section class="navigation">
+  <section class="navigation" id="home">
     <div class="container">
       <nav-bar>
       </nav-bar>
     </div>
   </section>
 
-  <section class="about">
+  <section class="about" id="about">
     <div class="container">
       <about-comp 
         :lang='lang'
@@ -22,7 +22,7 @@
     </div>
   </section>
 
-  <section class="skills">
+  <section class="skills" id="skills">
     <div class="container">
       <skills-items></skills-items>
     </div>
