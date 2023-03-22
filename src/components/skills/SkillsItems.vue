@@ -3,7 +3,7 @@
         <h4 class="skills-title title">
             Skills
         </h4>
-        <div class="skills-subtitle subtitle">
+        <div style="display:none" class="skills-subtitle subtitle">
             I work with
         </div>
 

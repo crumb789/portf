@@ -78,7 +78,9 @@ export default {
 
             // отправка на сервер
             this.loaderShow = true
-            await  emailjs.send(this.serv, this.templ, template, this.key)
+            await  emailjs.send(this.serv, this.templ, template, this.key, {
+                'g-recaptcha-response': '6LcTXSElAAAAAL0FZvKuXxI_Zf6-UCUIfrV_wZp5'
+            })
             .then((result) => {
                     console.log('Mail Send!', result.text);
                     this.showMessage = true

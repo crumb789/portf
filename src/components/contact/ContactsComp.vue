@@ -45,6 +45,7 @@ export default {
     transition: 0.3s all;
     &_title{
         background-color: #5CCDC9;
+        margin-bottom: 20px;
     }
     &-wrapper{
         background-color: #5CCDC9;
