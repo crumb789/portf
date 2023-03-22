@@ -22,6 +22,17 @@
     </div>
   </section>
 
+  <section class="works">
+    <div class="container">
+      <works-list>
+        <work-item v-for="work in works" :key="work.id"
+          :work='work'>
+
+        </work-item>
+      </works-list>
+    </div>
+  </section> 
+
   <section class="skills" id="skills">
     <div class="container">
       <skills-items></skills-items>
@@ -33,9 +44,21 @@
 
 
 <script>
+// components 
 import NavBar from '@/components/nav/NavBar.vue'
 import AboutComp from '@/components/about/AboutComp.vue'
 import SkillsItems from '@/components/skills/SkillsItems.vue'
+import WorksList from '@/components/works/WorksList.vue'
+import WorkItem from '@/components/works/WorkItem.vue'
+
+
+// images
+import lesson from '@/assets/images/lesson.png'
+import pitshav from '@/assets/images/pitshav.png'
+import timer from '@/assets/images/timer.png'
+import xo from '@/assets/images/xo.png'
+import weather from '@/assets/images/weather.png'
+
 
 
 export default {
@@ -43,11 +66,50 @@ export default {
   components:{
     NavBar,
     AboutComp,
-    SkillsItems
+    SkillsItems,
+    WorksList,
+    WorkItem
   },
   data() {
     return{
       lang: 'eng',
+      works: [
+        {
+          'id': 0,
+          'tag': 'weather',
+          'path': weather,
+          'url':'https://crumb789.github.io/weather-app'
+
+        },
+        {
+          'id': 1,
+          'tag': 'timer',
+          'path': timer,
+          'url':'https://crumb789.github.io/timer'
+
+        },
+        {
+          'id': 2,
+          'tag': 'pitshav',
+          'path': pitshav,
+          'url':'https://crumb789.github.io/pitshavbot'
+
+        },
+        {
+          'id': 3,
+          'tag': 'lesson',
+          'path': lesson,
+          'url':'https://crumb789.github.io/lesson'
+
+        },
+        {
+          'id': 4,
+          'tag': 'xo',
+          'path': xo,
+          'url':'https://crumb789.github.io/xo-app'
+
+        },
+      ]
     }
   },
   methods:{
@@ -94,11 +156,17 @@ export default {
   margin-top: 40px;
   // display: none;
 }
+.works{
+  margin: 30px 0;
+  padding: 30px 0;
+}
 .skills{
   padding: 50px 0;
 }
 
-
+button{
+  cursor: pointer;
+}
 ////media
 @media(max-width: 425px){
   .container{
