@@ -16,7 +16,7 @@
                     <label for="message">Message</label>
                     <textarea name="message"  v-model="userMessage"></textarea>     
                 </div>             
-                <div class="g-recaptcha" data-sitekey="6LcTXSElAAAAAL0FZvKuXxI_Zf6-UCUIfrV_wZp5"></div>
+        
                 <div class="submit-wrapper">
                     <button class="btn" id="button-submit"> submit </button> 
                     <loader-comp v-if="loaderShow"></loader-comp>
