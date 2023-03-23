@@ -1,9 +1,13 @@
 <template>
-    <div @mouseenter=" hoverImg = true" @mouseleave="hoverImg = false" class="work-item ">
+    <div @mouseenter=" hoverImg = true" @mouseleave="hoverImg = false, coordX = 1, coordY =1" 
+        :style="{transform: positionForClass, transition: '0.5'+ 's all' }"   
+         class="work-item ">
         <div @mousemove="coordMouse" class="work-image">
             <a :class="{aHover: hoverImg === true}" :href="work.url" target="_blank">
                 <img :src="work.path" :alt="work.tag">
             </a>
+
+            <!-- {{coordX}}:{{coordY}} -->
             <h5 :class="{ workHover: hoverImg === true }" class="work-tag title">{{work.tag}}</h5>
         </div>
     </div>
@@ -22,18 +26,47 @@ export default {
         return{
             hoverImg: false,
             coordX: undefined,
-            coordY: undefined
+            coordY: undefined,
+
         }
     },
     methods:{
         coordMouse(event) {
-            // console.log(event);
+            // console.log(event.path.length);
+            if(event.path.length === 12){
+                console.log('mouse on text')
+                this.coordX = 1
+                this.coordY = 1
+                console.log(this.coordX, this.coordY)
 
-            this.coordX = event.layerX
-            this.coordY = event.layerY
-            console.log(this.coordX, this.coordY)
+            }
+             else {
+                this.coordX = event.layerX
+                this.coordY = event.layerY
+
+            }
+
+
+            // console.log(this.coordX, this.coordY)
         }
 
+    },
+    computed:{
+        positionForClass(){
+            if(this.coordX < 150 && this.coordY < 165 && this.coordX  > 1 && this.coordY > 1){
+                return `rotate3d(-13, 10, -1, 12deg)`
+            }
+            if(this.coordX > 150 && this.coordY < 165 && this.coordX  > 1 && this.coordY > 1){
+                return `rotate3d(8, 2, 1, 12deg)`
+            }
+            if(this.coordX > 150 && this.coordY > 165 && this.coordX  > 1 && this.coordY > 1){
+                return `rotate3d(1, 9.5, 1, 16deg)`
+            }
+            if(this.coordX < 300 && this.coordY > 165 && this.coordX  > 1 && this.coordY > 1){
+                return `rotate3d(1, 9.5, 1, -16deg)`
+            }
+            return `rotate3d(1, 1, 1, 0deg)`
+        }
     }
 }
 </script>
@@ -45,7 +78,7 @@ export default {
         position: relative;
         background-color: rgb(131, 127, 127);
         border-radius: 10px;
-
+        transition: 0.5s all;
         a{
             // background-color: #8f8e8e;
             border-radius: 10px;
