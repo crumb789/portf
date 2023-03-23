@@ -1,10 +1,10 @@
 <template>
-    <div @mouseenter="hoverImg = true" @mouseleave="hoverImg = false" class="work-item ">
-        <div class="work-image ">
+    <div @mouseenter=" hoverImg = true" @mouseleave="hoverImg = false" class="work-item ">
+        <div @mousemove="coordMouse" class="work-image">
             <a :class="{aHover: hoverImg === true}" :href="work.url" target="_blank">
                 <img :src="work.path" :alt="work.tag">
-                <h5 :class="{ workHover: hoverImg === true }" class="work-tag title">{{work.tag}}</h5>
             </a>
+            <h5 :class="{ workHover: hoverImg === true }" class="work-tag title">{{work.tag}}</h5>
         </div>
     </div>
 </template>
@@ -21,8 +21,20 @@ export default {
     data() {
         return{
             hoverImg: false,
+            coordX: undefined,
+            coordY: undefined
         }
     },
+    methods:{
+        coordMouse(event) {
+            // console.log(event);
+
+            this.coordX = event.layerX
+            this.coordY = event.layerY
+            console.log(this.coordX, this.coordY)
+        }
+
+    }
 }
 </script>
 
@@ -51,21 +63,26 @@ export default {
         opacity: 0;
         top: 50%;
         left: 50%;
+        min-width: 60%;
+        width: 90%;
         border-radius: 10px;
-        transform: translate(-45%, -25%);
+        transform: translate(-50%, -25%);
         transition: 0.3s all;
+        cursor: pointer;
     }
 
 }
 .workHover{
-    opacity: 2;
-    background-color: rgb(131, 127, 127);
+    opacity: 1;
+    background-color: rgb(202, 202, 202);
     padding: 10px;
+    border: 1px solid #000;
     font-size: 34px;
     color: #fff;
+    text-shadow: 1px 1px 1px #000;
 
 }
 .aHover{
-    opacity: 0.3;
+    opacity: 0.5;
 }
 </style>

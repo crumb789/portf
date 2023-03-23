@@ -76,35 +76,35 @@ export default {
       works: [
         {
           'id': 0,
-          'tag': 'weather',
+          'tag': 'Weather-App',
           'path': weather,
           'url':'https://crumb789.github.io/weather-app'
 
         },
         {
           'id': 1,
-          'tag': 'timer',
+          'tag': 'Timer-App',
           'path': timer,
           'url':'https://crumb789.github.io/timer'
 
         },
         {
           'id': 2,
-          'tag': 'pitshav',
+          'tag': 'Pitshav-Bot',
           'path': pitshav,
           'url':'https://crumb789.github.io/pitshavbot'
 
         },
         {
           'id': 3,
-          'tag': 'lesson',
+          'tag': 'Lessons',
           'path': lesson,
           'url':'https://crumb789.github.io/lesson'
 
         },
         {
           'id': 4,
-          'tag': 'xo',
+          'tag': 'Tic-Tac-Toe',
           'path': xo,
           'url':'https://crumb789.github.io/xo-app'
 
@@ -168,6 +168,14 @@ button{
   cursor: pointer;
 }
 ////media
+
+@media(max-width: 1280px){
+  .container{
+    width: 1280px;
+  }
+}
+
+
 @media(max-width: 425px){
   .container{
     width: 320px;

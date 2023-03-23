@@ -1,7 +1,7 @@
 <template>
     <div class="contact">
         <div class="contact-wrapper">
-            <h4 class="contact_title title">Contacts</h4>
+            <h4 class="contact-title title">Contacts</h4>
             
             <div class="contact-social">
                 <contact-icons></contact-icons>
@@ -43,7 +43,7 @@ export default {
     background-color: #5CCDC9;
     border-radius: 10px;
     transition: 0.3s all;
-    &_title{
+    &-title{
         background-color: #5CCDC9;
         margin-bottom: 20px;
     }
@@ -57,10 +57,20 @@ export default {
     }
 }
 
+@media(max-width: 768px){
+    .contact{
+        &-title{
+            font-size: 40px;
+        }
+    }
+}
 
 @media(max-width: 425px){
     .contact{
         width: 100%;
+        &-title{
+            font-size: 34px;
+        }
     }
 }
 </style>

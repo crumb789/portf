@@ -132,6 +132,7 @@ export default {
             }
             &_info{
                 font-size: 24px;
+                margin-right: 268px;
             }
             &_lang{
                 font-size: 22px;

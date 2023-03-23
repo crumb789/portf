@@ -84,7 +84,13 @@ export default {
     }
 }
 
-
+@media(max-width: 768px){
+.skills{
+    &-title{
+        font-size: 40px;
+    }
+}
+}
 @media(max-width: 425px){
     .skills{
         &-icons{
@@ -93,6 +99,9 @@ export default {
             grid-template-rows: repeat(1, 100px);
             grid-auto-rows: 100px;
             row-gap: 25px;
+        }
+        &-title{
+            font-size: 34px;
         }
     }
 }

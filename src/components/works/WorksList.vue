@@ -1,6 +1,6 @@
 <template>
     <div class="work">
-        <h4 class="work-title title">Works</h4>
+        <h4 class="work-title title">Projects</h4>
         <div class="work-wrapper">
             <slot></slot>
         </div>
@@ -31,12 +31,24 @@ export default {
         gap: 20px;
     }
 }
-
+@media(max-width:768px){
+    .work{
+        &-wrapper{
+            
+        }
+        &-title{
+            font-size: 40px;
+        }
+    }
+}
 @media(max-width:425px){
     .work{
         &-wrapper{
             width: 90%;
             gap: 5px;
+        }
+        &-title{
+            font-size: 34px;
         }
     }
 }
