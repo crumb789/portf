@@ -58,7 +58,7 @@ import pitshav from '@/assets/images/pitshav.png'
 import timer from '@/assets/images/timer.png'
 import xo from '@/assets/images/xo.png'
 import weather from '@/assets/images/weather.png'
-import restaurant from '@/assets/images/restaurant.png'
+import restaurant from '@/assets/images/rest-2.png'
 
 
 
@@ -115,7 +115,7 @@ export default {
           'id': 5,
           'tag': 'Landing-Page',
           'path': restaurant,
-          'url':'https://crumb789.github.io/xo-app'
+          'url':'https://crumb789.github.io/'
 
         },
       ]
