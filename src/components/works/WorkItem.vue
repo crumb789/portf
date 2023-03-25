@@ -66,10 +66,10 @@ export default {
         },
         positionShadow(){
             if(this.coordX < 150 && this.coordY < 165 && this.coordX  > 1 && this.coordY > 1){
-                return `5px 10px 5px #000`
+                return `4px 8px 5px #000`
             }
             if(this.coordX > 150 && this.coordY < 165 && this.coordX  > 1 && this.coordY > 1){
-                return `-5px 10px 5px #000`
+                return `-4px 8px 5px #000`
             }
             if(this.coordX > 150 && this.coordY > 165 && this.coordX  > 1 && this.coordY > 1){
                 return `-5px -5px 5px #000`
@@ -99,9 +99,10 @@ export default {
         img{
             width: 100%;
             border-radius: 10px;
+            height: 329px;
             // box-shadow: 3px 3px 3px #8f8e8e, -5px -5px 18px #00000021;
             border: 1px solid #000;
-            transition: 0.5s all;
+            transition: 0.7s all;
         }
     }
     &-tag{
@@ -129,13 +130,26 @@ export default {
 
 }
 .aHover{
-    opacity: 0.5;
+    opacity: 0.7;
 }
 
-// .image{
-//    // width: 100%;
-//     // border-radius: 10px;
-//     // box-shadow: 3px 3px 3px #8f8e8e, -5px -5px 18px #00000021;
-//     // border: 1px solid #000;
-// }
+
+@media(max-width:425px){
+    .workHover{
+        font-size: 16px;
+    }
+    .work{
+        &-image{
+            img{
+                height: auto;
+            }
+        }
+    }
+}
+
+
+///media устройства с сенсорным экраном, с которым работают пальцами
+@media (hover: none) and (pointer: coarse) {
+
+}
 </style>

@@ -5,7 +5,7 @@
             <ul>
                 <li @click="menu = false" class="nav_item"><a href="#home">Home</a></li> <hr>
                 <li @click="menu = false" class="nav_item"><a href="#about">About</a></li> <hr>
-                <li @click="menu = false" class="nav_item"><a href="#skills">Skills</a></li> <hr>
+                <li @click="menu = false" class="nav_item"><a href="#projects">Projects</a></li> <hr>
                 <li @click="menu = false" class="nav_item"><a href="#contact">Contact</a></li> <hr>
             </ul>
             <hr class="divider">

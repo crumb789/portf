@@ -44,8 +44,10 @@ export default {
 @media(max-width:425px){
     .work{
         &-wrapper{
+            grid-template-columns: repeat(2, 1fr);
             width: 90%;
-            gap: 5px;
+            column-gap: 5px;
+            row-gap: 10px;
         }
         &-title{
             font-size: 34px;

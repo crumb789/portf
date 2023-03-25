@@ -22,7 +22,7 @@
     </div>
   </section>
 
-  <section class="works">
+  <section class="works" id="projects">
     <div class="container">
       <works-list>
         <work-item v-for="work in works" :key="work.id"
@@ -39,6 +39,10 @@
     </div>
   </section>
 
+  <to-up-page
+    @to-up-page='toUpPageTop'>
+  </to-up-page>
+
 </template>
 
 
@@ -50,6 +54,7 @@ import AboutComp from '@/components/about/AboutComp.vue'
 import SkillsItems from '@/components/skills/SkillsItems.vue'
 import WorksList from '@/components/works/WorksList.vue'
 import WorkItem from '@/components/works/WorkItem.vue'
+import ToUpPage from '@/components/UI/ToUpPage.vue'
 
 
 // images
@@ -70,7 +75,8 @@ export default {
     AboutComp,
     SkillsItems,
     WorksList,
-    WorkItem
+    WorkItem,
+    ToUpPage
   },
   data() {
     return{
@@ -125,6 +131,9 @@ export default {
     changeLang(newLang){
       this.lang = newLang
     },
+    toUpPageTop(){
+      window.scrollTo(0,0)
+    }
 
   }
 }
