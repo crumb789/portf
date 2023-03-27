@@ -62,7 +62,7 @@ export default {
 <style lang="scss" scoped>
 .skills{
     &-wrapper{
-        min-height: 260px;
+        min-height: 180px;
     }
     &-title{
         margin-bottom: 20px;

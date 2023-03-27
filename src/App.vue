@@ -1,9 +1,4 @@
 <template>
-  <!-- <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/> -->
 
   <section class="navigation" id="home">
     <div class="container">
@@ -12,7 +7,7 @@
     </div>
   </section>
 
-  <section class="about" id="about">
+  <section class="about" >
     <div class="container">
       <about-comp 
         :lang='lang'
@@ -153,7 +148,10 @@ export default {
   color: #2c3e50;
   // position: absolute;
 }
-
+section{
+  // margin-bottom: 60px;
+  padding: 30px 0;
+}
 .container{
   width: 1440px;
 }
@@ -169,17 +167,18 @@ export default {
 
 .navigation{
   margin-top: 30px;
+  padding: 0;
 }
 .about{
   margin-top: 40px;
+  padding: 0;
   // display: none;
 }
 .works{
-  margin: 30px 0;
-  padding: 30px 0;
+
 }
 .skills{
-  padding: 50px 0;
+  // padding:0 0 50px 0;
 }
 
 button{

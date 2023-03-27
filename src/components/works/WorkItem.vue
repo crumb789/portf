@@ -8,7 +8,9 @@
             </a>
 
             <!-- {{coordX}}:{{coordY}} -->
-            <h5 :class="{ workHover: hoverImg === true }" class="work-tag title">{{work.tag}}</h5>
+            <div :class="{ workHover: hoverImg === true }" class="work-tag title">
+                <a :href="work.url" target="_blank" >{{work.tag}}</a>
+                </div>
         </div>
     </div>
 </template>
@@ -95,6 +97,7 @@ export default {
             // background-color: #8f8e8e;
             border-radius: 10px;
             transition: 0.5s all;
+            text-decoration: none;
         }
         img{
             width: 100%;
@@ -116,6 +119,11 @@ export default {
         transform: translate(-50%, -25%);
         transition: 0.3s all;
         cursor: pointer;
+        a{
+            font-size: 16px;
+            color: #fff;
+            background: transparent;
+        }
     }
 
 }
@@ -127,6 +135,9 @@ export default {
     font-size: 34px;
     color: #fff;
     text-shadow: 1px 1px 1px #000;
+    a{
+        font-size: 34px;
+    }
 
 }
 .aHover{
@@ -137,11 +148,15 @@ export default {
 @media(max-width:425px){
     .workHover{
         font-size: 16px;
+        a{
+            font-size: 16px;
+        }
     }
     .work{
         &-image{
             img{
                 height: auto;
+                border-radius: 3px;
             }
         }
     }

@@ -15,10 +15,10 @@
         </div>
 
         <div class="about-image">
-
+            <img :src="frontend" alt="frontend img">
         </div>
 
-        <div class="about-descr">
+        <div class="about-descr" id="about">
             <h4 class="about-descr_title title">
                 About me
             </h4>
@@ -44,6 +44,8 @@
 </template>
 
 <script>
+import frontend from '@/assets/images/frontend.jpg'
+
 export default {
     name:'about-section',
     props:{
@@ -53,7 +55,8 @@ export default {
     },
     data() {
         return{
-            age: undefined
+            age: undefined,
+            frontend,
         }
     },
     methods:{
@@ -93,9 +96,16 @@ export default {
     &-image{
         margin-top: 30px;
         width: 1152px;
-        height: 387px;
+        // height: 387px;
         background-color: antiquewhite;
         border-radius: 10px 10px 0 0;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+
+        }
     }
     &-descr{
         display: flex;
