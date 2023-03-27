@@ -95,9 +95,9 @@ export default {
     }
     &-image{
         margin-top: 30px;
-        width: 1152px;
+        width: 80%;
         // height: 387px;
-        background-color: antiquewhite;
+        background-color: #f6ffef;
         border-radius: 10px 10px 0 0;
         img{
             width: 100%;
