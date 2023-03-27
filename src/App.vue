@@ -138,14 +138,22 @@ export default {
 *{
   box-sizing: border-box;
   margin: 0 auto;
-  background-color: #ffffef;
+  // background-color: #ffffef;
+}
+html{
+  background-image: url('@/assets/back/wave.svg') ;
+  -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
 }
 #app {
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  // color: #2c3e50;
+  color: #fffafa;
   // position: absolute;
 }
 section{

@@ -98,7 +98,7 @@ export default {
         width: 80%;
         // height: 387px;
         background-color: #f6ffef;
-        border-radius: 10px 10px 0 0;
+        border-radius: 12px 12px 0 0;
         img{
             width: 100%;
             height: 100%;
@@ -112,7 +112,9 @@ export default {
         flex-direction: column;
         justify-content: center;
         row-gap: 20px;
-        min-height: 380px;
+        min-height: 220px;
+        padding: 30px 0;
+        color: #2c3e50;
         background-color: #f6ffef;
         width: 80%;
         border-radius: 0 0 10px 10px;

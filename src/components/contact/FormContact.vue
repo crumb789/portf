@@ -163,6 +163,11 @@ form{
     border-radius: 5px;
     text-transform: uppercase;
     font-weight: 600;
+    box-shadow: 2px 2px #2c3d50;
+    transition: 0.3s all;
+    &:hover{
+        box-shadow: 3px 3px #2c3d50;    
+    }
 }
 .message{
     margin-top: 20px;

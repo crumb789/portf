@@ -34,14 +34,13 @@ export default {
 *{
   box-sizing: border-box;
   margin: 0 auto;
-  background-color: #ffffef;
+  // background-color: #ffffef;
     font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
 }
-#sec {
+#sec-app{
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

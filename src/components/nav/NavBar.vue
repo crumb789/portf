@@ -5,7 +5,7 @@
             <ul>
                 <li @click="menu = false" class="nav_item"><a href="#home">Home</a></li> <hr>
                 <li @click="menu = false" class="nav_item"><a href="#about">About</a></li> <hr>
-                <li @click="menu = false" class="nav_item"><a href="#projects">Projects</a></li> <hr>
+                <li @click="menu = false" class="nav_item"><a href="#projects">Projects</a></li> <hr> 
                 <li @click="menu = false" class="nav_item"><a href="#contact">Contact</a></li> <hr>
             </ul>
             <hr class="divider">
@@ -99,7 +99,7 @@ export default {
                 width: 5px;
                 height: 5px;
                 border-radius: 100%;
-                background-color: #000;
+                border-color: #009b95;
             }
         }
     }
@@ -153,7 +153,7 @@ nav{
     &_item{
         a{
             text-decoration: none;
-            // font-family: 'Adamcg Pro', sans-serif;
+            color: #f8f8ff;
         }
         position: relative;
         list-style-type: none;
@@ -176,17 +176,23 @@ nav{
             content: " ";  
             position: absolute;
             width: 0%;
-            height: 3px;
+            height: 2px;
             background-color: #009999;
             transition: 0.3s all;
-            bottom: -21px;
+            bottom: -22px;
         }
     }
+}
+.navActive{
+    background-color: cadetblue;
 }
 
 .divider{
     margin-top: 20px;
     width: 80%;
+    border-color: #009b95;
+    border-radius: 2px;
+
 }
 
 
@@ -201,7 +207,10 @@ nav{
 @media(max-width: 425px){
     .nav{
         &_item{
-            font-size: 18px;
+            font-size: 28px;
+            a{
+                color: #f8f8ff;
+            }
         }
     }
     .burgerActive{
@@ -235,6 +244,7 @@ nav{
                 height: 4px;
                 background-color: #000;
                 border-radius: 100%;
+                border-color: #009b95;
                 
             }
         }

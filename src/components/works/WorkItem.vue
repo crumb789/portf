@@ -90,6 +90,7 @@ export default {
 .work{
     &-image{
         position: relative;
+        height: 98%;
         background-color: rgb(131, 127, 127);
         border-radius: 10px;
         transition: 0.5s all;

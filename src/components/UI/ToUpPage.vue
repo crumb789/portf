@@ -41,7 +41,7 @@ export default {
         width: 19px;
         background: transparent;
         cursor: pointer;
-        z-index: 100;
+        z-index: 40;
         &::after{
             content: '';
             position: absolute;
