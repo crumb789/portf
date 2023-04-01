@@ -40,7 +40,6 @@ import emailjs from '@emailjs/browser';
 
 import LoaderComp from '@/components/UI/LoaderComp.vue'
 
-console.log(emailjs)
 
 export default {
     name:"form-contact",
@@ -164,6 +163,7 @@ form{
     text-transform: uppercase;
     font-weight: 600;
     box-shadow: 2px 2px #2c3d50;
+    background-color: #f0ffff;
     transition: 0.3s all;
     &:hover{
         box-shadow: 3px 3px #2c3d50;    

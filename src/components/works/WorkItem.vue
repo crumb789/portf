@@ -34,8 +34,9 @@ export default {
     },
     methods:{
         coordMouse(event) {
-            // console.log(event.path.length);
-            if(event.path.length === 12){
+            // console.log(event.srcElement.localName)
+                // если элемент ссылка, анимация отменяется
+            if(event.srcElement.localName === 'a'){
                 this.coordX = 1
                 this.coordY = 1
             }
@@ -44,9 +45,6 @@ export default {
                 this.coordY = event.layerY
 
             }
-
-
-            // console.log(this.coordX, this.coordY)
         }
 
     },

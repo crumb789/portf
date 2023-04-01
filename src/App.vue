@@ -141,11 +141,12 @@ export default {
   // background-color: #ffffef;
 }
 html{
-  background-image: url('@/assets/back/wave.svg') ;
+  background-image: url('@/assets/back/layered-1.svg') ;
   -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
+  scroll-behavior: smooth; ///плавная прокрутка по ссылке по стр
 }
 #app {
 

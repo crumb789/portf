@@ -113,7 +113,7 @@ export default {
         justify-content: center;
         row-gap: 20px;
         min-height: 220px;
-        padding: 30px 0;
+        padding: 40px 0;
         color: #2c3e50;
         background-color: #f6ffef;
         width: 80%;
@@ -232,7 +232,7 @@ export default {
         }
         &-descr{
             width: 100%;
-            padding: 30px 0;
+            padding: 50px 0;
             
             &_title{
                 font-size: 34px;
