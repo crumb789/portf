@@ -59,6 +59,7 @@ import timer from '@/assets/images/timer.png'
 import xo from '@/assets/images/xo.png'
 import weather from '@/assets/images/weather.png'
 import restaurant from '@/assets/images/rest-2.png'
+import diff from '@/assets/images/diff.png'
 
 
 
@@ -116,7 +117,14 @@ export default {
           'id': 5,
           'tag': 'Landing-Page',
           'path': restaurant,
-          'url':'https://crumb789.github.io/'
+          'url':'https://crumb789.github.io/' 
+
+        },
+        {
+          'id': 6,
+          'tag': 'Different',
+          'path': diff,
+          'url':'https://crumb789.github.io/different/' 
 
         },
       ]
