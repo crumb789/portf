@@ -5,4 +5,8 @@ module.exports = defineConfig({
   publicPath: process.env.NODE_ENV === 'production'
       ? '/portf/'
       : '/',
+
+  // publicPath: process.env.NODE_ENV === 'production'
+  // ? '/'
+  // : '/',
 })

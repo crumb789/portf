@@ -1,6 +1,6 @@
 <template>
     <div class="form">
-        <form @submit.prevent='submitBtn' action="#">
+        <form @submit.prevent='submitBtn' >
                 <!-- input name for templates letters -->
                 <div class="form-item" id="name-input">
                     <label for="user_name">Your Name</label>

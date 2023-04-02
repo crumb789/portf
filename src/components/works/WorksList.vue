@@ -101,7 +101,6 @@ button{
 
 .showAll{
     height: auto;
-    overflow: auto;
 }
 
 @keyframes moveArrowDown{
