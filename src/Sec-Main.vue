@@ -1,8 +1,8 @@
 <template>
   <section class="contacts" id="contact">
     <div class="container">
+        <slot></slot>
       <contacts-comp>
-
       </contacts-comp>
     </div>
   </section>

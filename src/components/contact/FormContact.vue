@@ -1,6 +1,6 @@
 <template>
     <div class="form">
-        <form @submit.prevent='submitBtn' >
+        <form @submit.prevent='submitBtn' method="post" id="demo-form" action="?" >
                 <!-- input name for templates letters -->
                 <div class="form-item" id="name-input">
                     <label for="user_name">Your Name</label>
@@ -14,11 +14,13 @@
                 
                 <div class="form-item" id="textarea-input">
                     <label for="message">Message</label>
-                    <textarea name="message"  v-model="userMessage"></textarea>     
+                    <textarea name="message"  v-model="userMessage" required></textarea>     
                 </div>             
         
                 <div class="submit-wrapper">
-                    <button class="btn" id="button-submit"> submit </button> 
+                    <button class=" btn" > 
+                        submit 
+                        </button> 
                     <loader-comp v-if="loaderShow"></loader-comp>
                 </div>
         </form>
@@ -59,12 +61,16 @@ export default {
             templ: 'template_2uuliqb',
             key: 'QccUYVTCDVBSE0JEN',
 
+            sitekey: '6Lc8Y04lAAAAANrVTO_u2jfhlqauM_h49aYzI3jx',
+
             loaderShow: false
         }
     },
-    methods:{
+    methods:{     
         submitBtn(){
             this.sendEmail()
+
+            // onSubmit()
         },
 
         async sendEmail() {

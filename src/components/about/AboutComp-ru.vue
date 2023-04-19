@@ -1,11 +1,11 @@
 <template>
     <div class="about">
         <div class="about-wrapper">
-            <h1 class="about-wrapper_name">Nikolai <br> Mishchenko
+            <h1 class="about-wrapper_name">Николай <br> Мищенко
             </h1>
-            <div class="about-wrapper_info">FrontEnd Developer <br>
-                30 years old, <br> 
-                from Saint-Petersburg
+            <div class="about-wrapper_info">FrontEnd Разработчик <br>
+                30 лет, <br> 
+                из Санкт-Петербурга
             </div>
             <div class="about-wrapper_lang">
             <span @click="sendNewlang" :class="{active: !langEng} "> RU </span> 
@@ -20,22 +20,21 @@
 
         <div class="about-descr" id="about">
             <h4 class="about-descr_title title">
-                About me
+                Обо мне
             </h4>
             <p class="about-descr_item">
                 <span>
-                    Hi, I'm Nikolai – FrontEnd developer from Saint-Petersburg. <br>
-                    I'm interested in design and everything connected with it.
+                    Привет, я Николай – фронтенд-разработчик из Санкт-Петербурга. <br>
+                    Я интересуюсь дизайном и всем, что с ним связано.
                 </span>
                 <br>
                 <span>
-                    I'm studying at courses "Web and mobile design <br>
-                    interfaces" in IT-Academy.
+                    Я учился на курсах "Веб-Разработка" в Udemy.
                 </span>
                 <br>
                 <span>
-                    Ready to implement excellent projects <br>
-                    with wonderful people.
+                    Готов реализовывать отличные проекты <br>
+                    с замечательными людьми.
                 </span>
             </p>
         </div>

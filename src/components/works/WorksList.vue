@@ -1,6 +1,7 @@
 <template>
     <div class="work">
-        <h4 class="work-title title">Projects</h4>
+        <h4 v-if="langEng" class="work-title title">Projects</h4>
+        <h4 v-else class="work-title title">Проекты</h4>
         <div class="work-wrapper" :class="{showAll: showMore }">
             <slot></slot>
         </div>
@@ -13,6 +14,12 @@
 
 <script>
 export default {
+    name:'work-list',
+    props:{
+        langEng:{
+            type: Boolean
+        }
+    },
     data() {
         return{
             showMore: false

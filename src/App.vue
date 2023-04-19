@@ -2,24 +2,34 @@
 
   <section class="navigation" id="home">
     <div class="container">
-      <nav-bar>
+      <nav-bar v-if="langEng">
       </nav-bar>
+
+      <nav-bar-ru v-else>
+      </nav-bar-ru>
     </div>
   </section>
 
   <section class="about" >
     <div class="container">
-      <about-comp 
-        :lang='lang'
+      <about-comp v-if="langEng"
+        :langEng='langEng'
         
         @change-lang='changeLang'>
       </about-comp>
+
+      <about-comp-ru v-else
+        :langEng='langEng'
+        
+        @change-lang='changeLang' >
+
+      </about-comp-ru>
     </div>
   </section>
 
   <section class="works" id="projects">
     <div class="container">
-      <works-list>
+      <works-list :langEng='langEng'>
         <work-item v-for="work in works" :key="work.id"
           :work='work'>
 
@@ -30,7 +40,9 @@
 
   <section class="skills" id="skills">
     <div class="container">
-      <skills-items></skills-items>
+      <skills-items
+        :langEng='langEng'>
+      </skills-items>
     </div>
   </section>
 
@@ -45,7 +57,12 @@
 <script>
 // components 
 import NavBar from '@/components/nav/NavBar.vue'
+import NavBarRu from '@/components/nav/NavBar-ru.vue'
+
+
 import AboutComp from '@/components/about/AboutComp.vue'
+import AboutCompRu from './components/about/AboutComp-ru.vue'
+
 import SkillsItems from '@/components/skills/SkillsItems.vue'
 import WorksList from '@/components/works/WorksList.vue'
 import WorkItem from '@/components/works/WorkItem.vue'
@@ -68,15 +85,18 @@ export default {
   name:'app-page',
   components:{
     NavBar,
+    NavBarRu,
+
     AboutComp,
     SkillsItems,
     WorksList,
     WorkItem,
-    ToUpPage
+    ToUpPage,
+    AboutCompRu
   },
   data() {
     return{
-      lang: 'eng',
+      langEng: true,
       works: [
         {
           'id': 0,
@@ -132,7 +152,9 @@ export default {
   },
   methods:{
     changeLang(newLang){
-      this.lang = newLang
+      this.langEng = newLang;
+
+      // console.log(newLang)
     },
     toUpPageTop(){
       window.scrollTo(0,0)

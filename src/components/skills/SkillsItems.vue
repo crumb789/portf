@@ -1,10 +1,16 @@
 <template>
     <div class="skills-wrapper">
-        <h4 class="skills-title title">
+        <h4 v-if="langEng" class="skills-title title">
             Skills
         </h4>
-        <div style="display:none" class="skills-subtitle subtitle">
+        <h4 v-else class="skills-title title">
+            Навыки
+        </h4>
+        <div v-if="langEng" style="display:none" class="skills-subtitle subtitle">
             I work with
+        </div>
+        <div v-else style="display:none" class="skills-subtitle subtitle">
+            Я работал с
         </div>
 
         <div class="skills-icons">
@@ -51,6 +57,12 @@
 <script>
 
 export default {
+    name:'skill-items',
+    props:{
+        langEng:{
+            type: Boolean
+        }
+    },
     data() {
         return{
             
