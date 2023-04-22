@@ -8,9 +8,9 @@
                 из Санкт-Петербурга
             </div>
             <div class="about-wrapper_lang">
-            <span @click="sendNewlang" :class="{active: !langEng} "> RU </span> 
+            <span @click="sendNewlang" :class="{active: !language} "> RU </span> 
                 | 
-                <span @click="sendNewlang" :class="{active: langEng}" > ENG </span>
+                <span @click="sendNewlang" :class="{active: language}" > ENG </span>
             </div>
         </div>
 
@@ -60,10 +60,12 @@ export default {
     },
     methods:{
         sendNewlang() {
-            if(this.langEng){
-                this.$emit('change-lang', false)
-            }
-            else this.$emit('change-lang', true)
+            // if(this.langEng){
+            //     this.$emit('change-lang', false)
+            // }
+            // else this.$emit('change-lang', true)
+            this.$store.commit('changeLanguage')
+
         }
     }
 }

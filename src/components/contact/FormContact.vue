@@ -3,23 +3,29 @@
         <form @submit.prevent='submitBtn' method="post" id="demo-form" action="?" >
                 <!-- input name for templates letters -->
                 <div class="form-item" id="name-input">
-                    <label for="user_name">Your Name</label>
+                    <label v-if="language" for="user_name">Your Name</label>
+                    <label v-else for="user_name">Ваше имя</label>
                     <input type="text" id="user_name" name="user_name" v-model="userName" required>
                 </div>
                     
                 <div class="form-item" id="mail-input">
-                    <label for="user_email">Your Email</label>
+                    <label v-if="language"  for="user_email">Your Email</label>
+                    <label v-else for="user_email">Ваша почта</label>
                     <input type="email" id="user_email" name="user_email" v-model="userMail" required>
                 </div>
                 
                 <div class="form-item" id="textarea-input">
-                    <label for="message">Message</label>
+                    <label v-if="language" for="message">Message</label>
+                    <label v-else for="message">Сообщение</label>
                     <textarea name="message"  v-model="userMessage" required></textarea>     
                 </div>             
         
                 <div class="submit-wrapper">
-                    <button class=" btn" > 
+                    <button class=" btn" v-if="language" > 
                         submit 
+                        </button> 
+                        <button class=" btn" v-else> 
+                        отправить 
                         </button> 
                     <loader-comp v-if="loaderShow"></loader-comp>
                 </div>
@@ -112,6 +118,11 @@ export default {
             let deletStringInterval = setInterval( deletString , 10)
 
         },
+    },
+    computed:{
+        language(){
+            return this.$store.state.languageEng
+        }
     }
 }
 </script>

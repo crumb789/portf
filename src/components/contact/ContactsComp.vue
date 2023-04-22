@@ -1,7 +1,9 @@
 <template>
     <div class="contact">
         <div class="contact-wrapper">
-            <h4 class="contact-title title">Contacts</h4>
+            <h4 v-if="language" class="contact-title title">Contacts</h4>
+            <h4 v-else class="contact-title title">Контакты</h4>
+
             
             <div class="contact-social">
                 <contact-icons></contact-icons>
@@ -32,6 +34,11 @@ export default {
 
         }
     },
+    computed:{
+        language(){
+            return this.$store.state.languageEng
+        }
+    }
 }
 </script>
 

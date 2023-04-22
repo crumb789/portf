@@ -25,6 +25,9 @@ export default {
       // emailjs 
     }
   },
+  computed:{
+    
+  }
 }
 </script>
 
@@ -46,6 +49,15 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+input,
+textarea,
+button,
+select,
+div,
+a {
+    -webkit-tap-highlight-color: transparent;
 }
 
 .title{

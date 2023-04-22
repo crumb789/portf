@@ -8,9 +8,9 @@
                 from Saint-Petersburg
             </div>
             <div class="about-wrapper_lang">
-            <span @click="sendNewlang" :class="{active: !langEng} "> RU </span> 
+            <span @click="sendNewlang" :class="{active: !language} "> RU </span> 
                 | 
-                <span @click="sendNewlang" :class="{active: langEng}" > ENG </span>
+                <span @click="sendNewlang" :class="{active: language}" > ENG </span>
             </div>
         </div>
 
@@ -49,7 +49,7 @@ import frontend from '@/assets/images/frontend.jpg'
 export default {
     name:'about-section',
     props:{
-        langEng:{
+        language:{
             type: Boolean,
         }
     },
@@ -61,10 +61,12 @@ export default {
     },
     methods:{
         sendNewlang() {
-            if(this.langEng){
-                this.$emit('change-lang', false)
-            }
-            else this.$emit('change-lang', true)
+            // if(this.language){
+            //     this.$emit('change-lang', false)
+            // }
+            // else this.$emit('change-lang', true)
+            this.$store.commit('changeLanguage')
+
         }
     }
 }

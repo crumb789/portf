@@ -1,12 +1,12 @@
 <template>
     <div class="skills-wrapper">
-        <h4 v-if="langEng" class="skills-title title">
+        <h4 v-if="language" class="skills-title title">
             Skills
         </h4>
         <h4 v-else class="skills-title title">
             Навыки
         </h4>
-        <div v-if="langEng" style="display:none" class="skills-subtitle subtitle">
+        <div v-if="language" style="display:none" class="skills-subtitle subtitle">
             I work with
         </div>
         <div v-else style="display:none" class="skills-subtitle subtitle">
@@ -58,16 +58,16 @@
 
 export default {
     name:'skill-items',
-    props:{
-        langEng:{
-            type: Boolean
-        }
-    },
     data() {
         return{
             
         }
     },
+    computed:{
+        language(){
+            return this.$store.state.languageEng
+        }
+    }
 }
 </script>
 

@@ -1,12 +1,19 @@
 <template>
     <div class="work">
-        <h4 v-if="langEng" class="work-title title">Projects</h4>
+        <h4 v-if="language" class="work-title title">Projects</h4>
         <h4 v-else class="work-title title">Проекты</h4>
         <div class="work-wrapper" :class="{showAll: showMore }">
             <slot></slot>
         </div>
-        <button v-if="!showMore" @click="showMore = !showMore" class="btn-show">Show more...</button>
-        <button v-if="showMore" @click="showMore = !showMore" class="btn-hide">Hide</button>
+        <button v-if="!showMore" @click="showMore = !showMore" class="btn-show">
+            <span v-if="language">Show more...</span>
+            <span v-else>Показать больше...</span>
+            </button>
+        <button v-if="showMore" @click="showMore = !showMore" class="btn-hide">
+            <span v-if="language">Hide</span>
+            <span v-else>Скрыть</span>
+
+        </button>
 
     </div>
 </template>
@@ -15,16 +22,17 @@
 <script>
 export default {
     name:'work-list',
-    props:{
-        langEng:{
-            type: Boolean
-        }
-    },
     data() {
         return{
             showMore: false
         }
     },
+    computed:{
+        language(){
+            return this.$store.state.languageEng
+
+        }
+    }
 }
 </script>
 

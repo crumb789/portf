@@ -2,7 +2,7 @@
 
   <section class="navigation" id="home">
     <div class="container">
-      <nav-bar v-if="langEng">
+      <nav-bar v-if="language">
       </nav-bar>
 
       <nav-bar-ru v-else>
@@ -12,14 +12,14 @@
 
   <section class="about" >
     <div class="container">
-      <about-comp v-if="langEng"
-        :langEng='langEng'
+      <about-comp v-if="language"
+        :language='language'
         
         @change-lang='changeLang'>
       </about-comp>
 
       <about-comp-ru v-else
-        :langEng='langEng'
+        :language='language'
         
         @change-lang='changeLang' >
 
@@ -29,7 +29,7 @@
 
   <section class="works" id="projects">
     <div class="container">
-      <works-list :langEng='langEng'>
+      <works-list >
         <work-item v-for="work in works" :key="work.id"
           :work='work'>
 
@@ -40,8 +40,7 @@
 
   <section class="skills" id="skills">
     <div class="container">
-      <skills-items
-        :langEng='langEng'>
+      <skills-items>
       </skills-items>
     </div>
   </section>
@@ -49,7 +48,6 @@
   <to-up-page
     @to-up-page='toUpPageTop'>
   </to-up-page>
-
 </template>
 
 
@@ -153,13 +151,32 @@ export default {
   methods:{
     changeLang(newLang){
       this.langEng = newLang;
+      // this.$store.commit('changeLanguage')
 
       // console.log(newLang)
     },
     toUpPageTop(){
       window.scrollTo(0,0)
-    }
+    },
 
+  },
+  computed:{
+    language(){
+      return this.$store.state.languageEng
+    }
+  },
+  mounted() {
+    if(localStorage.langEng){
+      this.langEng = JSON.parse(localStorage.langEng)
+    }
+  },
+  watch: {
+    langEng:{
+      handler(newLangEng){
+        localStorage.langEng = JSON.stringify(newLangEng)
+      },
+      deep: true
+    },
   }
 }
 </script>
@@ -187,6 +204,16 @@ html{
   color: #fffafa;
   // position: absolute;
 }
+
+input,
+textarea,
+button,
+select,
+div,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
 section{
   // margin-bottom: 60px;
   padding: 30px 0;
